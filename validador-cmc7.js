@@ -1,5 +1,4 @@
-function mod(dividendo, divisor)
-{
+function mod(dividendo, divisor){
     return Math.round(dividendo - (Math.floor(dividendo/divisor)*divisor));
 }
 
