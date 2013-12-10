@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Validator</title>
 	<style>
 		*{
-			font-family:Verdana;
+			font-family:Helvetica, Verdana;
 		}
 		#cmc7 {
 			width: 300px;
@@ -13,7 +13,6 @@
 		#tip {
 			background-color: #B9DAFC;
 			width: 400px;
-			height: 63px;
 			border: 4px solid #829CC9;
 			border-radius: 4px;
 			padding: 10px;
@@ -22,14 +21,14 @@
 	</style>
 	<script>
 		window.onload = function () {
-			var botao = document.getElementById("validar");
+			var botao = document.getElementById("validate");
 		    botao.addEventListener("click", function(){
 		    	var cmc7 = document.getElementById("cmc7").value;
-
-		    	if(check_cmc7(cmc7)){
-		    		document.getElementById("container_aviso").innerHTML = "CMC7 válido";
+  
+		    	if(Cmc7Validator.validate(cmc7)){
+		    		document.getElementById("warning_container").innerHTML = "Valid CMC7";
 		    	} else {
-		    		document.getElementById("container_aviso").innerHTML = "CMC7 inválido";
+		    		document.getElementById("warning_container").innerHTML = "Invalid CMC7";
 		    	}
 		    });
 		}
@@ -37,15 +36,15 @@
 	<script src="../validador-cmc7.js"></script>
 </head>
 <body>
-	<h2>Validador CMC7</h2>
+	<h2>CMC7 Validator</h2>
 
 	<label for="cmc7">CMC7</label>
 	<input type="text" id="cmc7">
-	<input type="button" id="validar" value="validar">
-	<span id="container_aviso"></span>
+	<input type="button" id="validate" value="validate">
+	<span id="warning_container"></span>
 
 	<div id="tip">
-		<strong>Dica: </strong> Um exemplo válido de CMC7 é <br> 34100363 0010000055 200005306998
+      <strong>Tip: </strong> A valid CMC7: <br> 34100363 0010000055 200005306998
 	</div>
 </body>
 </html>
