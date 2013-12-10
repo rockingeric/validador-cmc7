@@ -66,6 +66,6 @@
 
   }
 
-  // Expose the module function.
+  // Expose the Cmc7Validator object
   context.Cmc7Validator = Cmc7Validator;
 })(window);
